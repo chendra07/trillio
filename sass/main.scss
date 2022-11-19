@@ -1,4 +1,10 @@
-@import "base";
-@import "layout";
-@import "components";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+
+@import "components/root";
+@import "layout/root";
 
