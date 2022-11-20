@@ -109,6 +109,10 @@
 
     &__icon-box {
         position: relative;
+
+        @include responsive(sp-small) {
+            display: none;
+        }
     }
 
     &__icon {

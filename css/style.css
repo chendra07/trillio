@@ -43,6 +43,12 @@ html {
   @media (max-width: 1200px) {
     html {
       font-size: 50%; } }
+  @media (max-width: 750px) {
+    html {
+      font-size: 45%; } }
+  @media (max-width: 480px) {
+    html {
+      font-size: 40%; } }
 
 * {
   margin: 0;
@@ -322,6 +328,9 @@ body {
     background-color: var(--color-grey-light-3); }
   .user-nav__icon-box {
     position: relative; }
+    @media (max-width: 480px) {
+      .user-nav__icon-box {
+        display: none; } }
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;

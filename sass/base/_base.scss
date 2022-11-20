@@ -5,6 +5,14 @@ html {
     @include responsive(sp-large) {
         font-size: 50%;
     }
+
+    @include responsive(medium) {
+        font-size: 45%;
+    }
+
+    @include responsive(sp-small) {
+        font-size: 40%;
+    }
 }
 
 * {
