@@ -38,6 +38,15 @@ body {
   line-height: 1.6;
   color: var(--color-grey-dark-2); }
 
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 2.5rem; }
+
+.recommend {
+  font-size: 1.3rem; }
+
 .btn-inline {
   border: none;
   color: var(--color-primary);
@@ -56,58 +65,73 @@ body {
     outline: none;
     animation: pulsate 1s; }
 
-.gallery__photo {
-  width: 100%;
-  display: block; }
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    width: 100%;
+    display: block; }
 
-.legal {
-  font-size: 1.2rem;
-  color: var(--color-grey-light-4);
-  text-align: center;
-  padding: 2.5rem; }
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem; }
+  .list__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: .7rem;
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../../img/chevron-thin-right.svg);
+    mask-size: cover; }
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem; }
+
+.content {
+  display: flex; }
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.hotel-view {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 .logo {
   height: 3.25rem;
   margin-left: 3rem; }
-
-.overview {
-  align-items: center;
-  border-bottom: var(--line); }
-  .overview__heading {
-    font-size: 2.25rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 1.5rem 3rem; }
-  .overview__stars {
-    margin-right: auto;
-    display: flex; }
-  .overview__location {
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center; }
-  .overview__icon-star, .overview__icon-location {
-    width: 1.75rem;
-    height: 1.75rem;
-    fill: var(--color-primary); }
-  .overview__icon-location {
-    margin-right: 1.5rem; }
-  .overview__rating {
-    background-color: var(--color-primary);
-    margin-left: 2rem;
-    color: #fff;
-    padding: 0 2.25rem;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; }
-  .overview__rating-average {
-    font-size: 2.25rem;
-    font-weight: 300; }
-  .overview__rating-count {
-    font-size: .8rem;
-    text-transform: uppercase; }
 
 .search {
   flex: 0 0 40%;
@@ -145,6 +169,62 @@ body {
     height: 2rem;
     width: 2rem;
     fill: var(--color-grey-light-4); }
+
+.user-nav {
+  align-self: stretch;
+  display: flex;
+  align-items: center; }
+  .user-nav > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center; }
+  .user-nav > *:hover {
+    background-color: var(--color-grey-light-3); }
+  .user-nav__icon-box {
+    position: relative; }
+  .user-nav__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--color-grey-dark-2); }
+  .user-nav__notification {
+    font-size: 1rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .user-nav__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+    margin-right: 1rem; }
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line); }
+
+.description {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  flex: 0 0 60%;
+  background-color: #fff;
+  box-shadow: var(--shadow-dark);
+  padding: 3rem;
+  margin-right: 4.5rem; }
+
+.user-reviews {
+  flex: 1;
+  background-color: brown; }
 
 .side-nav {
   font-size: 1.4rem;
@@ -185,70 +265,47 @@ body {
     margin-right: 2rem;
     fill: currentColor; }
 
-.user-nav {
-  align-self: stretch;
+.overview {
   display: flex;
-  align-items: center; }
-  .user-nav > * {
-    padding: 0 2rem;
-    cursor: pointer;
-    height: 100%;
+  align-items: center;
+  border-bottom: var(--line); }
+  .overview__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem; }
+  .overview__stars {
+    margin-right: auto;
+    display: flex; }
+  .overview__location {
+    font-size: 1.2rem;
     display: flex;
     align-items: center; }
-  .user-nav > *:hover {
-    background-color: var(--color-grey-light-3); }
-  .user-nav__icon-box {
-    position: relative; }
-  .user-nav__icon {
-    height: 2.25rem;
-    width: 2.25rem;
-    fill: var(--color-grey-dark-2); }
-  .user-nav__notification {
-    font-size: 1rem;
-    height: 1.75rem;
+  .overview__icon-star, .overview__icon-location {
     width: 1.75rem;
-    border-radius: 50%;
+    height: 1.75rem;
+    fill: var(--color-primary); }
+  .overview__icon-location {
+    margin-right: 1.5rem; }
+  .overview__rating {
     background-color: var(--color-primary);
+    margin-left: 2rem;
     color: #fff;
-    position: absolute;
-    top: 1.5rem;
-    right: 1.25rem;
+    padding: 0 2.25rem;
+    align-self: stretch;
     display: flex;
-    justify-content: center;
-    align-items: center; }
-  .user-nav__user-photo {
-    height: 3.75rem;
-    border-radius: 50%;
-    margin-right: 1rem; }
-
-.paragraph:not(:last-of-type) {
-  margin-bottom: 2rem; }
-
-.list {
-  list-style: none;
-  margin: 3rem 0;
-  padding: 3rem 0;
-  border-top: var(--line);
-  border-bottom: var(--line);
-  display: flex;
-  flex-wrap: wrap; }
-  .list__item {
-    flex: 0 0 50%;
-    margin-bottom: .7rem; }
-  .list__item::before {
-    content: "";
-    display: inline-block;
-    height: 1rem;
-    width: 1rem;
-    margin-right: .7rem;
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-image: url(../../img/chevron-thin-right.svg);
-    mask-size: cover; }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  .overview__rating-average {
+    font-size: 2.25rem;
+    font-weight: 300; }
+  .overview__rating-count {
+    font-size: .8rem;
+    text-transform: uppercase; }
 
 .recommend {
-  font-size: 1.3rem;
   color: var(--color-grey-dark-3);
   display: flex;
   align-items: center; }
@@ -262,61 +319,3 @@ body {
     border: 3px solid #fff; }
   .recommend__photo:not(:last-child) {
     margin-right: -1.15rem; }
-
-.container {
-  max-width: 120rem;
-  margin: 8rem auto;
-  background-color: var(--color-grey-light-2);
-  box-shadow: var(--shadow-dark);
-  min-height: 50rem; }
-
-.content {
-  display: flex; }
-
-.sidebar {
-  background-color: var(--color-grey-dark-1);
-  flex: 0 0 18%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
-
-.hotel-view {
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  flex: 1; }
-
-.header {
-  font-size: 1.4rem;
-  height: 7rem;
-  background-color: #fff;
-  border-bottom: var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
-.gallery {
-  display: flex; }
-
-.overview {
-  display: flex; }
-
-.detail {
-  display: flex;
-  padding: 4.5rem;
-  background-color: var(--color-grey-light-1);
-  border-bottom: var(--line); }
-
-.description {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.4rem;
-  flex: 0 0 60%;
-  background-color: #fff;
-  box-shadow: var(--shadow-dark);
-  padding: 3rem;
-  margin-right: 4.5rem; }
-
-.user-reviews {
-  flex: 1;
-  background-color: brown; }

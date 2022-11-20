@@ -1,6 +1,7 @@
 //===========================================
 //Hotel Overview
 .overview {
+    display: flex;
     align-items: center;
     border-bottom: var(--line);
 
@@ -55,5 +56,30 @@
     &__rating-count {
         font-size: .8rem;
         text-transform: uppercase;
+    }
+}
+
+//===========================================
+//Recommend
+.recommend {
+    color: var(--color-grey-dark-3);
+
+    display: flex;
+    align-items: center;
+
+    &__count {
+        margin-right: auto;
+    }
+
+    &__photo {
+        box-sizing: content-box;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+    }
+
+    &__photo:not(:last-child) {
+        margin-right: -1.15rem;
     }
 }
