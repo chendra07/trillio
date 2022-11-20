@@ -3,14 +3,9 @@
 .side-nav {
     font-size: 1.4rem;
     list-style: none;
-    margin-top: 3.5rem;
 
     &__item {
         position: relative;
-
-        &:not(:last-child) {
-            margin-bottom: .5rem;
-        }
     }
 
     &__item::before {
@@ -59,6 +54,13 @@
     }
 
     @include responsive(sp-small) {
+        display: flex;
+        justify-content: center;
+
+        &__item {
+            margin-bottom: 0;
+        }
+
         & span {
             display: none;
         }
