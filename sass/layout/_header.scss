@@ -73,6 +73,16 @@
         width: 2rem;
         fill: var(--color-grey-light-4);
     }
+
+    @include responsive(sp-small) {
+        &__input {
+            width: 50%;
+        }
+
+        &:focus {
+            width: 70%;
+        }
+    }
 }
 
 //===========================================

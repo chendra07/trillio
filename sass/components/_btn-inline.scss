@@ -11,14 +11,22 @@
     cursor: pointer;
     transition: all .2s;
 
+    &span {
+        margin-left: 3px;
+        transition: margin-left .2s;
+    }
+    
     &:hover {
         color: var(--color-grey-dark-1);
         transform: scale(1.25);
         box-shadow: 0 1rem 4rem var(--shadow-dark);
+        
+        span {
+            margin-left: 8px;
+        }
     }
 
     &:hover {
         outline: none;
-        animation: pulsate 1s;
     }
 }
